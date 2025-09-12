@@ -3,9 +3,12 @@ import requests
 import pandas as pd
 import boto3
 import json
+from dotenv import load_dotenv
+import os
 
 # -------- CONFIG --------
-API_KEY = "c31db2630f7e847a84234b0f2d7bbac5"
+load_dotenv()
+API_KEY = os.getenv("OPENWEATHER_API_KEY")
 CITIES = ["New York", "London", "Mumbai", "Tokyo"]
 data = [
     {"City": "London", "Temperature": 22, "Humidity": 55},
